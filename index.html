@@ -19,6 +19,7 @@
 		background-color: rgb(200,200,200);
 		width: 500px;
 		margin: 0px auto;
+		margin-bottom: 50px;
 		border-radius: 30px;
 		box-shadow: 2px 2px 2px 2px rgba(9,9,9,.5);
 	}
@@ -28,45 +29,46 @@
 		text-shadow: 1px 1px 1px white;
 	}
 
-	.table{
-		width: 550px;
-		margin: 0px auto;
-		color: #c2a723;
-	}
-
-	.table input{
+	input{
 		outline: none;
-		padding: 3px;
-		padding-left: 5px;
+		padding: 5px;
 		border: 1px solid lightblue;
 		border-radius: 30px;
 		background-color: #efef;
-		width: 120px;
+		width: 170px;
 		transition: 1s;
 	}
 
-	.table input:focus{
-		width: 150px;
+	input:focus{
+		border-color: blue;
 	}
 
-	.table table{
+	#form table{
+		width: 100%;
 		font-family: sans-serif;
-		color: #232323;
 		border-collapse: collapse;
-		margin-left: 20px;
-		margin-top: 70px;
 	}
 
-	.table table, tr, td, th{
-		padding: 8px 15px;
+	#form table, tr, td, th{
+		/*padding: 8px 15px;*/
 		color: #c2a723;
+		border-bottom: 2px solid blue;
+		text-align: center;
+		font-size: 18px; 
 	}
 
-	.table th{
-		border-bottom: 2px solid darkblue;
+	#form td{
+		padding-bottom: 20px;
 	}
 
-	.table button{
+	#form th{
+		border-bottom: 5px solid #c2a723;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		background-color: darkblue;
+	}
+
+	#form button{
 		margin-top: 20px;
 		float: right;
 		margin-right: 65px;
@@ -79,31 +81,53 @@
 		cursor: pointer;
 	}
 
-	.table .total{
+	#form .total{
 		text-align: right;
 		margin-top: 17px;
 		margin-right: 65px;
+	}
+
+	video{
+		width: 300px;
+		height: 200px;
 	}
 
 	.total input{
 		background-color: #d1d1d1;
 		border: 1px solid green;
 		cursor: not-allowed;
+		margin-bottom: 40px;
 	}
 
 	.clear{
 		clear: right;
 	}
 
+	small{
+		display: block;
+		margin: 0px;
+		margin-top: 15px;
+	}
+
 	@media only screen and (max-width: 635px){
 		.header{
-			margin: auto;
+			margin: 20px auto;
 			width: 300px;
 			font-size: 12px;
 		}
 
-		.table{
+		#form{
 			overflow: auto;
+		}
+
+		#form th,td{
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+
+		video{
+			width: 250px;
+			height: 150px;
 		}
 	}
 
@@ -128,7 +152,6 @@
 		<div class="header">
 			<h1>Web Kasir Sederhana</h1>
 		</div>
-		<div class="table">
 			<form id="form">
 				<table>
 					<tr>
@@ -138,43 +161,63 @@
 						<th>Jumlah Beli</th>
 					</tr>
 					<tr>
-						<td>1</td>
-						<td>Susu kurma</td>
+						<td>1.</td>
+						<td>
+						<small>Susu kurma</small>
+						<video controls="">
+							<source src="susukurma.mp4" type="video/mp4">
+						</video>
+						</td>
 						<td>Rp. 8.500</td>
 						<td><input type="number" name="susu"> pcs</td>
 					</tr>
 					<tr>
-						<td>2</td>
-						<td>Chitato</td>
+						<td>2.</td>
+						<td>
+						<small>Chitato</small>
+						<video controls="">
+							<source src="chitato.mp4" type="video/mp4">
+						</video></td>
 						<td>Rp. 10.000</td>
 						<td><input type="number" name="chitato"> pcs</td>
 					</tr>
 					<tr>
-						<td>3</td>
-						<td>Milkshake</td>
+						<td>3.</td>
+						<td>
+						<small>Milkshake</small>
+						<video controls="">
+							<source src="milkshake.mp4" type="video/mp4">
+						</video></td>
 						<td>Rp. 8.000</td>
 						<td><input type="number" name="milkshake"> pcs</td>
 					</tr>
 					<tr>
-						<td>4</td>
-						<td>Samyang</td>
+						<td>4.</td>
+						<td>
+						<small>Samyang</small>
+						<video controls="">
+							<source src="samyang.mp4" type="video/mp4">
+						</video></td>
 						<td>Rp. 21.000</td>
 						<td><input type="number" name="samyang"> pcs</td>
 					</tr>
 					<tr>
-						<td>5</td>
-						<td>God Day</td>
+						<td>5.</td>
+						<td>
+						<small>God Day</small>
+						<video controls="">
+							<source src="goodday.mp4" type="video/mp4">
+						</video></td>
 						<td>Rp. 15.000</td>
 						<td><input type="number" name="godday"> pcs</td>
 					</tr>
-				</table>
-				<button type="button" onclick="formKasir();">Hitung</button>
-				<div class="clear"></div>
-				<div class="total">
-					Total bayar <input type="txt" name="bayar" readonly>
-				</div>
-			</form>
-		</div>
+			</table>
+			<button type="button" onclick="formKasir();">Hitung</button>
+			<div class="clear"></div>
+			<div class="total">
+				Total bayar <input type="txt" name="bayar" readonly>
+			</div>
+		</form>
 	</div>
 </body>
 </html>
